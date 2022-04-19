@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Header from './components/Header';
+import Area from './components/Area';
+import Sequence from './components/Sequence';
+import {settings} from './data/settings.js';
 import './App.css';
 
 function App() {
+  const [sequence, setSequence] = useState([]);
+  const [lastChord, setLastChord] = useState('');
+
+  function handleNewChord(chord){
+    setSequence(prevSequence => [...prevSequence, chord]);
+    setLastChord(chord);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>      
+      <div className="area-container">
+        {settings.areas.map((area, index) => 
+          <Area key={area.title}
+                className={area.className}
+                title={area.title}
+                chords={area.chords}
+                lastActiveChord={lastChord}
+                onNewChord={handleNewChord}/>
+        )}
+      </div>
+      <Sequence sequence={sequence}/>
     </div>
   );
 }

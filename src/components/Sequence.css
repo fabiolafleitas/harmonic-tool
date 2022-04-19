@@ -1,0 +1,55 @@
+.sequence-container {
+  display: flex;
+  justify-content: center;
+  grid-gap: 1%;
+  margin-top: 50px;
+}
+
+.sequence-chord {
+  display: flex;
+  border-radius: 4px;
+  padding: 5px 5px;
+  background-color: #ff0081;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+.chord-dropdown:hover .sequence-chord {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.chord-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-size: 14px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100%;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f8f8;
+}
+
+.chord-dropdown:hover .dropdown-content {display: block;}

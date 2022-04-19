@@ -1,0 +1,31 @@
+.chord-btn {
+  border: 1px solid #ff0081;
+  border-radius: 4px;
+  color: #ff0081;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.chord-btn:hover {
+  color: #ffffff;
+  background-color: #ff0081;
+  padding: 10px 20px;
+}
+
+.btn-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #ff0081;
+  }
+  70% {
+      box-shadow: 0 0 0 10px #f7dce9;
+  }
+  100% {
+      box-shadow: 0 0 0 0 #fff9fc;
+  }
+}

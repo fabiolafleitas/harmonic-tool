@@ -1,4 +1,24 @@
+.area-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow:  5px 5px 10px #d9d9d9,
+              -5px -5px 10px #ffffff;
+}
+
 .App {
+  text-align: center;
+}
+
+h1 {
+  font-weight: lighter;
   text-align: center;
 }
 
@@ -35,4 +55,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dark {
+  background-color: black;
+  color: white;
 }
